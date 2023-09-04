@@ -37,10 +37,12 @@ func MatchOneOf(expected ...ID) Matcher {
 }
 
 // MatchMemberOf matches any SPIFFE ID in the given trust domain.
-func MatchMemberOf(expected TrustDomain) Matcher {
+func MatchMemberOf(expected TrustDomain, expectedSub SubDomain) Matcher {
 	return Matcher(func(actual ID) error {
-		if !actual.MemberOf(expected) {
+		if !actual.MemberOf(expected)  {
 			return fmt.Errorf("unexpected trust domain %q", actual.TrustDomain())
+		} else if !actual.MemberOf(expectedSub) {
+			return fmt.Errorf("unexpected trust domain %q", actual.SubDomain())
 		}
 		return nil
 	})
