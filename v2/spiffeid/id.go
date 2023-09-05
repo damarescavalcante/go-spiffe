@@ -94,7 +94,7 @@ func FromURI(uri *url.URL) (ID, error) {
 // ID is a SPIFFE ID
 type ID struct {
 	id string
-	subdomain string
+	//subdomain string
 	// pathidx tracks the index to the beginning of the path inside of id. This
 	// is used when extracting the trust domain or path portions of the id.
 	pathidx int
@@ -110,7 +110,8 @@ func (id ID) TrustDomain() TrustDomain {
 
 // MemberOf returns true if the SPIFFE ID is a member of the given trust domain.
 func (id ID) MemberOf(td TrustDomain) bool {
-	return id.TrustDomain() == td || id.SubDomain() == td
+	//return id.TrustDomain() == td || id.SubDomain() == td
+	return id.TrustDomain() == td
 }
 
 // Path returns the path of the SPIFFE ID inside the trust domain.
