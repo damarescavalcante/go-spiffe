@@ -1,4 +1,4 @@
-module github.com/spiffe/go-spiffe/v2
+module github.com/damarescavalcante/go-spiffe/v2
 
 go 1.17
 

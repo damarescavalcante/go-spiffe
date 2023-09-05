@@ -3,13 +3,13 @@ package workloadapi_test
 import (
 	"testing"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/jwtbundle"
-	"github.com/spiffe/go-spiffe/v2/bundle/spiffebundle"
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/internal/test/fakeworkloadapi"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/svid/x509svid"
-	"github.com/spiffe/go-spiffe/v2/workloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/jwtbundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/spiffebundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/test/fakeworkloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/x509svid"
+	"github.com/damarescavalcante/go-spiffe/v2/workloadapi"
 	"github.com/stretchr/testify/require"
 )
 

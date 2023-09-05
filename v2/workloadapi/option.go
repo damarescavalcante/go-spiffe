@@ -1,8 +1,8 @@
 package workloadapi
 
 import (
-	"github.com/spiffe/go-spiffe/v2/logger"
-	"github.com/spiffe/go-spiffe/v2/svid/x509svid"
+	"github.com/damarescavalcante/go-spiffe/v2/logger"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/x509svid"
 	"google.golang.org/grpc"
 )
 

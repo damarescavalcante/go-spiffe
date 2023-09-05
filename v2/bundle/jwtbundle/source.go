@@ -1,7 +1,7 @@
 package jwtbundle
 
 import (
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 )
 
 // Source represents a source of JWT bundles keyed by trust domain.

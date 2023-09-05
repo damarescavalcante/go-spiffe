@@ -2,7 +2,7 @@
 
 This example shows how two services using HTTP can communicate using TLS with the server presenting an X509 SVID and expecting a client to authenticate with a JWT-SVID. The SVIDs are retrieved, and authentication is accomplished, via the SPIFFE Workload API.
 
-The **HTTP server** creates a [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source).
+The **HTTP server** creates a [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source).
 
 ```go
 source, err := workloadapi.NewX509Source(ctx, clientOptions)
@@ -14,7 +14,7 @@ The socket path is provided as a client option. If the socket path is not provid
 source, err := workloadapi.NewX509Source(ctx)
 ```
 
-The **HTTP server** then uses [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for TLS that will present the server X509-SVID.
+The **HTTP server** then uses [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for TLS that will present the server X509-SVID.
 
 The `tls.Config` is used when creating the HTTP server.
 
@@ -34,7 +34,7 @@ jwtSource, err := workloadapi.NewJWTSource(ctx, clientOptions)
 ```
 
 A middleware is added to authenticate client JWT-SVIDs provided in the `Authorization` header.
-This middleware validates the token using the [jwtsvid.ParseAndValidate](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/svid/jwtsvid?tab=doc#ParseAndValidate) using bundles obtained from the JWTSource.
+This middleware validates the token using the [jwtsvid.ParseAndValidate](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid?tab=doc#ParseAndValidate) using bundles obtained from the JWTSource.
 
 ```go
 svid, err := jwtsvid.ParseAndValidate(token, a.jwtSource, a.audiences)
@@ -50,7 +50,7 @@ if err != nil {
 svid, err := client.ValidateJWTSVID(ctx, token, audiences[0])
 ```
 
-On the other side, the **HTTP client** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for TLS that authenticates the server certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/server`. 
+On the other side, the **HTTP client** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for TLS that authenticates the server certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/server`. 
 
 ```go
 serverID := spiffeid.RequireFromString("spiffe://example.org/server")

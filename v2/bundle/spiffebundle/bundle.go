@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/go-jose/go-jose/v3"
-	"github.com/spiffe/go-spiffe/v2/bundle/jwtbundle"
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/internal/jwtutil"
-	"github.com/spiffe/go-spiffe/v2/internal/x509util"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/jwtbundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/jwtutil"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/x509util"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 	"github.com/zeebo/errs"
 )
 

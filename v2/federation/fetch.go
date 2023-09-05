@@ -6,10 +6,10 @@ import (
 	"crypto/x509"
 	"net/http"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/spiffebundle"
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/spiffebundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig"
 	"github.com/zeebo/errs"
 )
 

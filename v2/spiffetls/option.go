@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"net"
 
-	"github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig"
 	"github.com/zeebo/errs"
 )
 

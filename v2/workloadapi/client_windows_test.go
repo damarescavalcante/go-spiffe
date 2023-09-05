@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/spiffe/go-spiffe/v2/internal/test"
-	"github.com/spiffe/go-spiffe/v2/internal/test/fakeworkloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/test"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/test/fakeworkloadapi"
 	"github.com/stretchr/testify/require"
 )
 

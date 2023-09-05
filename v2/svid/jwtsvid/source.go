@@ -3,7 +3,7 @@ package jwtsvid
 import (
 	"context"
 
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 )
 
 // Params are JWT-SVID parameters used when fetching a new JWT-SVID.

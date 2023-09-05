@@ -4,8 +4,8 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/svid/x509svid"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/x509svid"
 )
 
 // TLSClientConfig returns a TLS configuration which verifies and authorizes

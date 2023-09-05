@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/spiffebundle"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/spiffebundle"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 )
 
 // BundleWatcher is used by WatchBundle to provide the caller with bundle updates and

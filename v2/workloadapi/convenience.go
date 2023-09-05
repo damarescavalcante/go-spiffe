@@ -3,10 +3,10 @@ package workloadapi
 import (
 	"context"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/jwtbundle"
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/svid/jwtsvid"
-	"github.com/spiffe/go-spiffe/v2/svid/x509svid"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/jwtbundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/x509svid"
 )
 
 // FetchX509SVID fetches the default X509-SVID, i.e. the first in the list

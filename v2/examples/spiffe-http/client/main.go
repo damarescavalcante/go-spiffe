@@ -7,9 +7,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig"
-	"github.com/spiffe/go-spiffe/v2/workloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig"
+	"github.com/damarescavalcante/go-spiffe/v2/workloadapi"
 )
 
 const (

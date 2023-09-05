@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
-	"github.com/spiffe/go-spiffe/v2/internal/test"
-	"github.com/spiffe/go-spiffe/v2/internal/test/fakeworkloadapi"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/svid/x509svid"
-	"github.com/spiffe/go-spiffe/v2/workloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/test"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/test/fakeworkloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/x509svid"
+	"github.com/damarescavalcante/go-spiffe/v2/workloadapi"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

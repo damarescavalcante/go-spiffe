@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/jwtbundle"
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/svid/jwtsvid"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/jwtbundle"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid"
 	"github.com/zeebo/errs"
 )
 

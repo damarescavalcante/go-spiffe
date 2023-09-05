@@ -3,7 +3,7 @@ package jwtutil
 import (
 	"crypto"
 
-	"github.com/spiffe/go-spiffe/v2/internal/cryptoutil"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/cryptoutil"
 )
 
 // CopyJWTAuthorities copies JWT authorities from a map to a new map.

@@ -1,7 +1,7 @@
 package x509bundle
 
 import (
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 )
 
 // Source represents a source of X.509 bundles keyed by trust domain.

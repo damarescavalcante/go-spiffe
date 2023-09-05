@@ -24,7 +24,7 @@ The scenario used in this example goes like this:
 7.  The client receives the response. If the response has an HTTP 200 status, its body is logged, otherwise the HTTP status code is logged.
 
 ## Creating an X509Source struct
-As you may noted, the three workloads create a [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source) struct.
+As you may noted, the three workloads create a [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source) struct.
 ```go
 	x509Source, err := workloadapi.NewX509Source(
 		ctx,
@@ -39,7 +39,7 @@ Where:
 ```
 In all cases, the `X509Source` is used to create a `tls.Config` for the underlying transport connection of the HTTP client/server. However, there are some differences in its usage on the server, client, and proxy workloads: 
 
-The **server workload** uses the `X509Source` to create the [TLSServerConfig](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSServerConfig) for the HTTP server used:
+The **server workload** uses the `X509Source` to create the [TLSServerConfig](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSServerConfig) for the HTTP server used:
 ```go
 	server := &http.Server{
 		Addr:      ":8080",
@@ -48,7 +48,7 @@ The **server workload** uses the `X509Source` to create the [TLSServerConfig](ht
 ```
 This enables the server to present an X.509-SVID to the other end of the connection. This SVID is provided by the `X509Source` via the Workload API.
 
-The **client workload** uses the `X509Source` to create the [TLSClientConfig](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSClientConfig) for the `Transport` of the HTTP client used:
+The **client workload** uses the `X509Source` to create the [TLSClientConfig](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSClientConfig) for the `Transport` of the HTTP client used:
 ```go
     serverID := spiffeid.RequireFromString("spiffe://example.org/server")
     .
@@ -65,9 +65,9 @@ The **client workload** uses the `X509Source` to create the [TLSClientConfig](ht
 ``` 
 This enables the client to verify that the X.509-SVID presented by the other end of the connection has the specified SPIFFE ID by using:
 - The trust bundle provided by the Workload API via the `X509Source`.
-- The [Authorizer](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) returned by [tlsconfig.AuthorizeID()](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#AuthorizeID)
+- The [Authorizer](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) returned by [tlsconfig.AuthorizeID()](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#AuthorizeID)
 
-The **proxy workload** uses the `X509Source` to create the [TLSClientConfig](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSClientConfig) for the `Transport` of the HTTP reverse proxy used:
+The **proxy workload** uses the `X509Source` to create the [TLSClientConfig](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSClientConfig) for the `Transport` of the HTTP reverse proxy used:
 ```go
 	proxy := httputil.NewSingleHostReverseProxy(remote)
 	transport := *(http.DefaultTransport.(*http.Transport)) // copy of http.DefaultTransport.
@@ -78,9 +78,9 @@ The **proxy workload** uses the `X509Source` to create the [TLSClientConfig](htt
 ```
 This enables the proxy to verify that the X.509-SVID presented by the server has the specified SPIFFE ID by using:
 - The trust bundle provided by the Workload API via the `X509Source`.
-- The [Authorizer](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) function returned by [tlsconfig.AuthorizeID()](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#AuthorizeID)
+- The [Authorizer](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) function returned by [tlsconfig.AuthorizeID()](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#AuthorizeID)
 
-The **proxy workload** also uses the `X509Source` to create the [TLSServerConfig](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSServerConfig) for the HTTP server used:
+The **proxy workload** also uses the `X509Source` to create the [TLSServerConfig](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#TLSServerConfig) for the HTTP server used:
 ```go
 	server := &http.Server{
 		Addr:      ":8443",
@@ -90,7 +90,7 @@ The **proxy workload** also uses the `X509Source` to create the [TLSServerConfig
 This enables the proxy to present an X.509-SVID to the client. This SVID is provided by the `X509Source` via the Workload API, and contains the SPIFFE ID of the server (as explained later in **Create the registration entries** section).
 
 ## Creating a JWTSource struct
-On the scenario described we can see that only the client and the server workloads create a [workloadapi.JWTSource](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#JWTSource). This is because the proxy workload doesn't need to deal with JWTs since the server is the one in charge of authenticating the clients:
+On the scenario described we can see that only the client and the server workloads create a [workloadapi.JWTSource](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#JWTSource). This is because the proxy workload doesn't need to deal with JWTs since the server is the one in charge of authenticating the clients:
 ```go
     jwtSource, err := workloadapi.NewJWTSource(
 		ctx,
@@ -105,7 +105,7 @@ Where:
 ```
 Although both client and server workloads create a `JWTSource`, it is used differently in each case:
 
-The **client workload** uses the `JWTSource` to get a JWT-SVID by calling its [FetchJWTSVID](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#JWTSource.FetchJWTSVID) function:
+The **client workload** uses the `JWTSource` to get a JWT-SVID by calling its [FetchJWTSVID](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#JWTSource.FetchJWTSVID) function:
 ```go
 	svid, err := jwtSource.FetchJWTSVID(ctx, jwtsvid.Params{
 		Audience: audience,
@@ -124,7 +124,7 @@ Then, the client uses the JWT-SVID to set a bearer token to the request's `Autho
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", svid.Marshal()))
 ```
 
-The **server workload** uses the `JWTSource` to authenticate the client by calling the [ParseAndValidate](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/svid/jwtsvid?tab=doc#ParseAndValidate) function:
+The **server workload** uses the `JWTSource` to authenticate the client by calling the [ParseAndValidate](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid?tab=doc#ParseAndValidate) function:
 ```go
 	_, err := jwtsvid.ParseAndValidate(token, a.jwtSource, a.audiences)
 ```

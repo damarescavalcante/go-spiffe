@@ -2,7 +2,7 @@
 
 This example shows how a service can obtain automatically rotated X.509 SVIDs and JWT Bundles from the SPIFFE Workload API.
 
-The first step is to create a Workload API client. The code assumes it is talking to [SPIRE](https://github.com/spiffe/spire) and uses a [workloadapi.ClientOption](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#ClientOption) to provide the address to the SPIRE Agent socket.
+The first step is to create a Workload API client. The code assumes it is talking to [SPIRE](https://github.com/spiffe/spire) and uses a [workloadapi.ClientOption](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#ClientOption) to provide the address to the SPIRE Agent socket.
 
 ```go
 client, err := workloadapi.New(ctx, workloadapi.WithAddr(socketPath))
@@ -14,7 +14,7 @@ In case `workloadapi.WithAddr` is not provided, the value of `SPIFFE_ENDPOINT_SO
 client, err := workloadapi.New(ctx)
 ```
 
-The library uses a watcher interface  [workloadapi.X509ContextWatcher](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509ContextWatcher) to send updates (or errors) to clients.
+The library uses a watcher interface  [workloadapi.X509ContextWatcher](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509ContextWatcher) to send updates (or errors) to clients.
 
 ```go
 err = client.WatchX509Context(ctx, &x509Watcher{})

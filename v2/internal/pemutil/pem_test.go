@@ -6,7 +6,7 @@ import (
 	"encoding/pem"
 	"testing"
 
-	"github.com/spiffe/go-spiffe/v2/internal/pemutil"
+	"github.com/damarescavalcante/go-spiffe/v2/internal/pemutil"
 	"github.com/stretchr/testify/require"
 )
 

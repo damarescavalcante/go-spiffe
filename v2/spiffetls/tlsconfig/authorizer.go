@@ -3,7 +3,7 @@ package tlsconfig
 import (
 	"crypto/x509"
 
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
 )
 
 // Authorizer authorizes an X509-SVID given the SPIFFE ID and the chain

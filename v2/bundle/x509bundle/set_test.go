@@ -3,7 +3,7 @@ package x509bundle_test
 import (
 	"testing"
 
-	"github.com/spiffe/go-spiffe/v2/bundle/x509bundle"
+	"github.com/damarescavalcante/go-spiffe/v2/bundle/x509bundle"
 	"github.com/stretchr/testify/require"
 )
 

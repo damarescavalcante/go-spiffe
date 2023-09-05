@@ -5,7 +5,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/spiffe/go-spiffe/v2/logger"
+	"github.com/damarescavalcante/go-spiffe/v2/logger"
 	"github.com/stretchr/testify/require"
 )
 

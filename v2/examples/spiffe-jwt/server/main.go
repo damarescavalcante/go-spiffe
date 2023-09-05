@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig"
-	"github.com/spiffe/go-spiffe/v2/svid/jwtsvid"
-	"github.com/spiffe/go-spiffe/v2/workloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid"
+	"github.com/damarescavalcante/go-spiffe/v2/workloadapi"
 )
 
 const socketPath = "unix:///tmp/agent.sock"

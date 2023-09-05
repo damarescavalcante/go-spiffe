@@ -3,9 +3,9 @@ package jwtsvid_test
 import (
 	"context"
 
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
-	"github.com/spiffe/go-spiffe/v2/svid/jwtsvid"
-	"github.com/spiffe/go-spiffe/v2/workloadapi"
+	"github.com/damarescavalcante/go-spiffe/v2/spiffeid"
+	"github.com/damarescavalcante/go-spiffe/v2/svid/jwtsvid"
+	"github.com/damarescavalcante/go-spiffe/v2/workloadapi"
 )
 
 func ExampleParseAndValidate() {

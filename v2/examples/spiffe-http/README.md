@@ -14,7 +14,7 @@ When the socket path is not provided, the value from the `SPIFFE_ENDPOINT_SOCKET
 source, err := workloadapi.NewX509Source(ctx)
 ```
 
-The **HTTP server** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for mTLS that authenticates the client certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/client`.
+The **HTTP server** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for mTLS that authenticates the client certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/client`.
 
 The `tls.Config` is used when creating the HTTP server.
 
@@ -28,7 +28,7 @@ server := &http.Server{
 }
 ```
 	
-On the other side, the **HTTP client** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for mTLS that authenticates the server certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/server`. 
+On the other side, the **HTTP client** uses the [workloadapi.X509Source](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/workloadapi?tab=doc#X509Source) to create a `tls.Config` for mTLS that authenticates the server certificate and verifies that it has the SPIFFE ID `spiffe://examples.org/server`. 
 
 ```go
 serverID := spiffeid.RequireFromString("spiffe://example.org/server")
@@ -41,7 +41,7 @@ client := &http.Client{
 }
 ```
 
-The [tlsconfig.Authorizer](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) is used to authorize the mTLS peer. In this example, both the client and server use it to authorize the specific SPIFFE ID of the other side of the connection.
+The [tlsconfig.Authorizer](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2/spiffetls/tlsconfig?tab=doc#Authorizer) is used to authorize the mTLS peer. In this example, both the client and server use it to authorize the specific SPIFFE ID of the other side of the connection.
 
 That is it! The go-spiffe library fetches and automatically renews the X.509 SVIDs of both workloads from the Workload API provider (i.e. SPIRE).
 

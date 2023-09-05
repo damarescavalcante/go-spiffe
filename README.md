@@ -10,7 +10,7 @@ It leverages the [SPIFFE Workload API](https://github.com/spiffe/spiffe/blob/mai
 
 ## Documentation
 
-See the [Go Package](https://pkg.go.dev/github.com/spiffe/go-spiffe/v2) documentation.
+See the [Go Package](https://pkg.go.dev/github.com/damarescavalcante/go-spiffe/v2) documentation.
 
 ## Quick Start
 
