@@ -192,6 +192,7 @@ func (b *Bundle) Clone() *Bundle {
 // domain. It implements the Source interface. An error will be
 // returned if the trust domain does not match that of the bundle.
 func (b *Bundle) GetX509BundleForTrustDomain(trustDomain spiffeid.TrustDomain) (*Bundle, error) {
+
 	if b.trustDomain != trustDomain {
 		return nil, x509bundleErr.New("no X.509 bundle found for trust domain: %q", trustDomain)
 	}

@@ -40,7 +40,8 @@ func MatchOneOf(expected ...ID) Matcher {
 //func MatchMemberOf(expected TrustDomain, expectedSub SubDomain) Matcher {
 func MatchMemberOf(expected TrustDomain) Matcher {
 	return Matcher(func(actual ID) error {
-		if !actual.MemberOf(expected)  {
+		//if !actual.MemberOf(expected)  {
+		if !expected.ID().MemberOf(actual.TrustDomain()) {
 			return fmt.Errorf("unexpected trust domain %q", actual.TrustDomain())
 		} 
 		//else if !actual.MemberOf(expectedSub) {

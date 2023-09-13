@@ -110,6 +110,9 @@ func (id ID) TrustDomain() TrustDomain {
 
 // MemberOf returns true if the SPIFFE ID is a member of the given trust domain.
 func (id ID) MemberOf(td TrustDomain) bool {
+	if strings.Contains(id, td.String()) {
+		return true
+	}
 	//return id.TrustDomain() == td || id.SubDomain() == td
 	return id.TrustDomain() == td
 }
